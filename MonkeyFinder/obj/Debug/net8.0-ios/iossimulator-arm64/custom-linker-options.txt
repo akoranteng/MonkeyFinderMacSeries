@@ -8,7 +8,7 @@ AreAnyAssembliesTrimmed=false
 				CacheDirectory=/Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/obj/Debug/net8.0-ios/iossimulator-arm64/linker-cache
 				
 				Debug=true
-				DeploymentTarget=11.0
+				DeploymentTarget=18.0
 				
 				EnableSGenConc=false
 				

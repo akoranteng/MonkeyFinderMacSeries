@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using MonkeyFinder.Models;
+using MonkeyFinder.Services;
 
 namespace MonkeyFinder.ViewModels;
 
@@ -10,41 +11,17 @@ public class MonkeysViewModel : BaseViewModel
     public MonkeysViewModel()
     {
         Title = "Monkey Finder";
-        LoadMonkeys();
+        LoadMonkeysFromService();
     }
 
-    void LoadMonkeys()
+    void LoadMonkeysFromService()
     {
         Monkeys.Clear();
 
-        Monkeys.Add(new Monkey
-        {
-            Name = "Baboon",
-            Location = "Africa"
-        });
+        var service = new MonkeyService();
+        var items = service.GetMonkeys();
 
-        Monkeys.Add(new Monkey
-        {
-            Name = "Capuchin Monkey",
-            Location = "South America"
-        });
-
-        Monkeys.Add(new Monkey
-        {
-            Name = "Blue Monkey",
-            Location = "Central Africa"
-        });
-
-        Monkeys.Add(new Monkey
-        {
-            Name = "Squirrel Monkey",
-            Location = "Central & South America"
-        });
-
-        Monkeys.Add(new Monkey
-        {
-            Name = "Golden Lion Tamarin",
-            Location = "Brazil"
-        });
+        foreach (var monkey in items)
+            Monkeys.Add(monkey);
     }
 }

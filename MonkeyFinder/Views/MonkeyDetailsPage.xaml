@@ -1,0 +1,38 @@
+<ContentPage 
+    x:Class="MonkeyFinder.Views.MonkeyDetailsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Name}">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20">
+
+            <!-- Hero Image -->
+    <Image 
+    Source="{Binding Image}"
+    HeightRequest="260"
+    Aspect="AspectFill"
+    Margin="0,0,0,10" />
+
+            <!-- Name -->
+            <Label 
+                Text="{Binding Name}"
+                FontSize="28"
+                FontAttributes="Bold" />
+
+            <!-- Location -->
+            <Label 
+                Text="{Binding Location}"
+                FontSize="18"
+                TextColor="Gray" />
+
+            <!-- Description -->
+            <Label 
+                Text="{Binding Details}"
+                FontSize="16"
+                LineBreakMode="WordWrap" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

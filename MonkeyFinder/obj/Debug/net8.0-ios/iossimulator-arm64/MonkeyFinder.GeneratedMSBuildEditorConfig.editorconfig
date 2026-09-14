@@ -40,6 +40,12 @@ build_metadata.AdditionalFiles.ManifestResourceName = MonkeyFinder.Resources.Sty
 build_metadata.AdditionalFiles.TargetPath = Resources/Styles/Styles.xaml
 build_metadata.AdditionalFiles.RelativePath = Resources/Styles/Styles.xaml
 
+[/Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/Views/MonkeyDetailsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MonkeyFinder.Views.MonkeyDetailsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views/MonkeyDetailsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views/MonkeyDetailsPage.xaml
+
 [/Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/Views/MonkeysPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MonkeyFinder.Views.MonkeysPage.xaml
