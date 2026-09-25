@@ -1,6 +1,5 @@
 MonkeyFinder Mac Series (.NET 8 • VS Code • iOS)
 A simplified, Mac‑friendly .NET 8 MAUI version of the MonkeyFinder workshop. Built for macOS, VS Code, and the iOS simulator, with each part organized into its own branch.
----
 Branches
 • main — Part 1: Baseline MAUI project
 • part2 — Navigation + MVVM
