@@ -1,21 +1,23 @@
-using MonkeyFinder.Models;
 using MonkeyFinder.ViewModels;
 
 namespace MonkeyFinder.Views;
 
-public partial class MonkeysPage : ContentPage
+public partial class MainPage : ContentPage
 {
-    public MonkeysPage()
+    private readonly MonkeysViewModel _viewModel;
+
+    public MainPage(MonkeysViewModel viewModel)
     {
         InitializeComponent();
-        BindingContext = new MonkeysViewModel();
+        _viewModel = viewModel;
+        BindingContext = _viewModel;
     }
 
-    private async void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    protected override async void OnAppearing()
     {
-        if (e.CurrentSelection.FirstOrDefault() is Monkey monkey)
-        {
-            await Navigation.PushAsync(new MonkeyDetailsPage(monkey));
-        }
+        base.OnAppearing();
+
+        if (_viewModel.Monkeys.Count == 0)
+            await _viewModel.LoadMonkeysAsync();
     }
 }

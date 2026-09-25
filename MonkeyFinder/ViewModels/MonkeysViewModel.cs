@@ -4,24 +4,42 @@ using MonkeyFinder.Services;
 
 namespace MonkeyFinder.ViewModels;
 
-public class MonkeysViewModel : BaseViewModel
+public partial class MonkeysViewModel : BaseViewModel
 {
+    private readonly MonkeyService _service;
+
     public ObservableCollection<Monkey> Monkeys { get; } = new();
 
-    public MonkeysViewModel()
+    public MonkeysViewModel(MonkeyService service)
     {
         Title = "Monkey Finder";
-        LoadMonkeysFromService();
+        _service = service;
     }
 
-    void LoadMonkeysFromService()
+    [RelayCommand]
+    public async Task LoadMonkeysAsync()
     {
-        Monkeys.Clear();
+        if (IsBusy)
+            return;
 
-        var service = new MonkeyService();
-        var items = service.GetMonkeys();
+        try
+        {
+            IsBusy = true;
 
-        foreach (var monkey in items)
-            Monkeys.Add(monkey);
+            var monkeys = await _service.GetMonkeysAsync();
+
+            Monkeys.Clear();
+            foreach (var monkey in monkeys)
+                Monkeys.Add(monkey);
+        }
+        catch (Exception ex)
+        {
+            Debug.WriteLine($"Unable to load monkeys: {ex.Message}");
+            await Shell.Current.DisplayAlert("Error", "Unable to load monkeys.", "OK");
+        }
+        finally
+        {
+            IsBusy = false;
+        }
     }
 }
