@@ -1,6 +1,9 @@
-using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using MonkeyFinder.Models;
 using MonkeyFinder.Services;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
 
 namespace MonkeyFinder.ViewModels;
 
@@ -10,10 +13,19 @@ public partial class MonkeysViewModel : BaseViewModel
 
     public ObservableCollection<Monkey> Monkeys { get; } = new();
 
+    // Parameterless constructor for XAML
+    public MonkeysViewModel() : this(new MonkeyService())
+    {
+    }
+
+    // DI-friendly constructor
     public MonkeysViewModel(MonkeyService service)
     {
-        Title = "Monkey Finder";
         _service = service;
+        Title = "Monkey Finder";
+
+        // Load data immediately so the page is never blank
+        _ = LoadMonkeysAsync();
     }
 
     [RelayCommand]
@@ -35,7 +47,6 @@ public partial class MonkeysViewModel : BaseViewModel
         catch (Exception ex)
         {
             Debug.WriteLine($"Unable to load monkeys: {ex.Message}");
-            await Shell.Current.DisplayAlert("Error", "Unable to load monkeys.", "OK");
         }
         finally
         {

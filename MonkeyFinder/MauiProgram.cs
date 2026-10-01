@@ -24,10 +24,10 @@ public static class MauiProgram
 
         // ViewModels
         builder.Services.AddSingleton<MonkeysViewModel>();
-        builder.Services.AddTransient<MonkeyDetailsViewModel>();
+        //builder.Services.AddTransient<MonkeyDetailsViewModel>();
 
         // Views
-        builder.Services.AddSingleton<MainPage>();
+        builder.Services.AddSingleton<MonkeysPage>();
         builder.Services.AddTransient<MonkeyDetailsPage>();
 
 #if DEBUG

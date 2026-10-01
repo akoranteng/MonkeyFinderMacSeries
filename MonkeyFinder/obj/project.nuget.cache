@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RsyrDI+/6I8=",
+  "dgSpecHash": "Pqa2bbv2eP4=",
   "success": true,
   "projectFilePath": "/Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/MonkeyFinder.csproj",
   "expectedPackageFiles": [
+    "/Users/alexkoranteng/.nuget/packages/communitytoolkit.mvvm/8.4.2/communitytoolkit.mvvm.8.4.2.nupkg.sha512",
     "/Users/alexkoranteng/.nuget/packages/googlegson/2.10.1.4/googlegson.2.10.1.4.nupkg.sha512",
     "/Users/alexkoranteng/.nuget/packages/microsoft.extensions.configuration/8.0.0/microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "/Users/alexkoranteng/.nuget/packages/microsoft.extensions.configuration.abstractions/8.0.0/microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

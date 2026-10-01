@@ -34,6 +34,7 @@
 /Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../MonkeyFinder.app/zh-Hans/Microsoft.Maui.Controls.resources.dll
 /Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../MonkeyFinder.app/zh-Hant/Microsoft.Maui.Controls.resources.dll
 /Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../MonkeyFinder.app/runtimeconfig.bin
+/Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../MonkeyFinder.app/CommunityToolkit.Mvvm.dll
 /Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../MonkeyFinder.app/Microsoft.Extensions.Configuration.dll
 /Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../MonkeyFinder.app/Microsoft.Extensions.Configuration.Abstractions.dll
 /Users/alexkoranteng/MAUI_DEV2026/MonkeyFinderPart1/MonkeyFinder/bin/Debug/net8.0-ios/iossimulator-arm64/publish/../MonkeyFinder.app/Microsoft.Extensions.DependencyInjection.dll
