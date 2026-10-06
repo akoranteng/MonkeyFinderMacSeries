@@ -1,12 +1,13 @@
 using MonkeyFinder.Models;
+using MonkeyFinder.ViewModels;
 
 namespace MonkeyFinder.Views;
 
 public partial class MonkeyDetailsPage : ContentPage
 {
-    public MonkeyDetailsPage(Monkey monkey)
+    public MonkeyDetailsPage()
     {
         InitializeComponent();
-        BindingContext = monkey ?? throw new ArgumentNullException(nameof(monkey));
+        BindingContext = new MonkeyDetailsViewModel();
     }
 }

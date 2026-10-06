@@ -2,37 +2,55 @@
     x:Class="MonkeyFinder.Views.MonkeyDetailsPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="{Binding Name}">
+    Title="{Binding Monkey.Name}">
 
-    <ScrollView>
-        <VerticalStackLayout Padding="20" Spacing="20">
+ <ScrollView>
+    <VerticalStackLayout Padding="20" Spacing="20">
 
-            <!-- Hero Image -->
-    <Image 
-    Source="{Binding Image}"
-    HeightRequest="260"
-    Aspect="AspectFill"
-    Margin="0,0,0,10" />
+        <!-- Monkey Image -->
+        <Image 
+            Source="{Binding Monkey.Image}"
+            HeightRequest="260"
+            Aspect="AspectFill"
+            Margin="0,0,0,10" />
+
+        <!-- Two-column layout -->
+        <Grid ColumnDefinitions="Auto,*"
+              RowDefinitions="Auto,Auto,Auto"
+              RowSpacing="12">
 
             <!-- Name -->
-            <Label 
-                Text="{Binding Name}"
-                FontSize="28"
-                FontAttributes="Bold" />
+            <Label Grid.Row="0" Grid.Column="0"
+                   Text="Name:"
+                   FontAttributes="Bold"
+                   FontSize="18" />
+            <Label Grid.Row="0" Grid.Column="1"
+                   Text="{Binding Monkey.Name}"
+                   FontSize="16" />
 
             <!-- Location -->
-            <Label 
-                Text="{Binding Location}"
-                FontSize="18"
-                TextColor="Gray" />
+            <Label Grid.Row="1" Grid.Column="0"
+                   Text="Location:"
+                   FontAttributes="Bold"
+                   FontSize="18" />
+            <Label Grid.Row="1" Grid.Column="1"
+                   Text="{Binding Monkey.Location}"
+                   FontSize="16" />
 
-            <!-- Description -->
-            <Label 
-                Text="{Binding Details}"
-                FontSize="16"
-                LineBreakMode="WordWrap" />
+            <!-- Details -->
+            <Label Grid.Row="2" Grid.Column="0"
+                   Text="Details:"
+                   FontAttributes="Bold"
+                   FontSize="18" />
+            <Label Grid.Row="2" Grid.Column="1"
+                   Text="{Binding Monkey.Details}"
+                   FontSize="16"
+                   LineBreakMode="WordWrap" />
 
-        </VerticalStackLayout>
-    </ScrollView>
+        </Grid>
+
+    </VerticalStackLayout>
+</ScrollView>
+
 
 </ContentPage>

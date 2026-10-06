@@ -2,6 +2,7 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MonkeyFinder.Models;
 using MonkeyFinder.Services;
+using MonkeyFinder.Views;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 
@@ -28,6 +29,7 @@ public partial class MonkeysViewModel : BaseViewModel
         _ = LoadMonkeysAsync();
     }
 
+    // Load monkeys from the service
     [RelayCommand]
     public async Task LoadMonkeysAsync()
     {
@@ -52,5 +54,18 @@ public partial class MonkeysViewModel : BaseViewModel
         {
             IsBusy = false;
         }
+    }
+
+    // Navigate to details page
+    [RelayCommand]
+    async Task GoToDetailsAsync(Monkey monkey)
+    {
+        if (monkey is null)
+            return;
+        System.Diagnostics.Debug.WriteLine("COMMAND FIRED — Monkey: " + monkey?.Name);
+        await Shell.Current.GoToAsync(nameof(MonkeyDetailsPage), true, new Dictionary<string, object>
+        {
+            { "Monkey", monkey }
+        });
     }
 }

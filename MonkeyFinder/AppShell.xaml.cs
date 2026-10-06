@@ -1,9 +1,15 @@
-﻿namespace MonkeyFinder;
+﻿using MonkeyFinder.Views;
 
-public partial class AppShell : Shell
+namespace MonkeyFinder
 {
-    public AppShell()
+    public partial class AppShell : Shell
     {
-        InitializeComponent();
+        public AppShell()
+        {
+            InitializeComponent();
+
+            // ⭐ REQUIRED: Register navigation routes
+            Routing.RegisterRoute(nameof(MonkeyDetailsPage), typeof(MonkeyDetailsPage));
+        }
     }
 }

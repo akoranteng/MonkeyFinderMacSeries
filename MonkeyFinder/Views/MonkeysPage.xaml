@@ -1,52 +1,65 @@
-<ContentPage
+<ContentPage 
     x:Class="MonkeyFinder.Views.MonkeysPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:viewmodels="clr-namespace:MonkeyFinder.ViewModels"
-    Padding="0,20,0,20">
+    Title="Monkeys">
 
-    <ContentPage.BindingContext>
-        <viewmodels:MonkeysViewModel />
-    </ContentPage.BindingContext>
+    <ScrollView>
 
-    <CollectionView
-        ItemsSource="{Binding Monkeys}"
-        SelectionMode="None"
-        ItemsLayout="VerticalList"
-        Margin="0,20,0,0"
-        VerticalScrollBarVisibility="Always">
+        <CollectionView
+            ItemsSource="{Binding Monkeys}"
+            SelectionMode="Single"
+            SelectionChanged="CollectionView_SelectionChanged"
+            Margin="10">
 
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Grid Padding="12"
-                      Margin="0,12,0,12"
-                      RowSpacing="6"
-                      RowDefinitions="Auto,Auto"
-                      ColumnDefinitions="Auto,*">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
 
-                    <Image Grid.RowSpan="2"
-                           Source="{Binding Image}"
-                           HeightRequest="80"
-                           WidthRequest="80"
-                           Aspect="AspectFill"
-                           Margin="0,0,12,0" />
+                    <!-- Card container -->
+                    <Frame
+                        Padding="10"
+                        Margin="0,0,0,12"
+                        HasShadow="True"
+                        CornerRadius="12"
+                        BackgroundColor="White">
 
-                    <Label Grid.Column="1"
-                           Text="{Binding Name}"
-                           FontSize="22"
-                           FontAttributes="Bold" />
+                        <HorizontalStackLayout Spacing="12">
 
-                    <Label Grid.Column="1"
-                           Grid.Row="1"
-                           Text="{Binding Location}"
-                           FontSize="20"
-                           TextColor="#555"
-                           LineHeight="1.2" />
+                            <!-- Rounded image wrapper -->
+                            <Frame
+                                Padding="0"
+                                HasShadow="False"
+                                CornerRadius="10"
+                                WidthRequest="80"
+                                HeightRequest="80">
 
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
+                                <Image
+                                    Source="{Binding Image}"
+                                    Aspect="AspectFill" />
+                            </Frame>
 
-    </CollectionView>
+                            <!-- Text content -->
+                            <VerticalStackLayout>
+
+                                <Label Text="{Binding Name}"
+                                       FontAttributes="Bold"
+                                       FontSize="18" />
+
+                                <Label Text="{Binding Location}"
+                                       FontSize="14"
+                                       TextColor="Gray" />
+
+                            </VerticalStackLayout>
+
+                        </HorizontalStackLayout>
+
+                    </Frame>
+
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </ScrollView>
 
 </ContentPage>
